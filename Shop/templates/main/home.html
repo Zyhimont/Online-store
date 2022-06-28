@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="section-new">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center"> Новинки </h1>
+                </div>
+                <div class="wrapper-slider">
+                <div class="slider-container">
+                {% for image in images %}
+                    <div class="col-lg-3 track">
+                        <div class="item">
+                            <div>
+                                <a href="{% url 'product' image.product.id %}">
+                                <img src="static/media/{{ image.image.url }}" class="img-fluid">
+                                </a>
+                            </div>
+                            {% if image.product.discount %}
+                            <div class="discount-container">
+                                <span>{{ image.product.discount }}%</span>
+                            </div>
+                            {% endif %}
+                            <hr size="4" style="margin-top: 0px;" noshade>
+                            <div class="row d-flex flex-wrap">
+                            <div class="col-12 d-flex flex-column justify-content-between">
+                            <a class="text flex-grow-3" href="{% url 'product' image.product.id %}">
+                                <h4>{{ image.product.product_name }}</h4>
+                            </a>
+                            <p class="flex-grow-2">
+                                {{ image.product.description|truncatechars_html:80 }}
+                            </p>
+                            <div class="flex-grow-1">
+                                {{ image.product.price }} BYN
+                            </div>
+                            <div class="add-to-cart-btn flex-grow-0">
+                                <a href="{% url 'product' image.product.id %}">
+                                <button class="btn btn-success">
+                                    Добавить в корзину
+                                </button>
+                                </a>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                    </div>
+
+            </div>
+                <div class="slider-buttons">
+                    <button class="btn-prev slider-buttons">&lt;</button>
+                    <button class="btn-next slider-buttons">&gt;</button>
+                </div>
+        </div>
+    </div>
+    <div class="section-delivery">
+        <h3>Бесплатная доставка</h3>
+        <br>
+        <h4>При заказе от 500 BYN — доставка бесплатно!</h4>
+    </div>
+    <div class="section-phones">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center"> Смартфоны </h1>
+                </div>
+                <div class="wrapper-slider">
+                <div class="slider-container">
+                {% for image_phone in images_phone %}
+                <div class="col-lg-3 track-phones">
+                    <div class="item-phones">
+                        <div>
+                            <a href="{% url 'product' image_phone.product.id %}">
+                            <img src="static/media/{{ image_phone.image.url }}" class="img-fluid">
+                            </a>
+                        </div>
+                        {% if image_phone.product.discount %}
+                        <div class="discount-container">
+                            <span>{{ image_phone.product.discount }}%</span>
+                        </div>
+                        {% endif %}
+                        <hr size="4" style="margin-top: 0px;" noshade>
+                        <a class="text" href="{% url 'product' image_phone.product.id %}">
+                        <h4>{{ image_phone.product.product_name }}</h4>
+                        </a>
+                        <p>
+                            {{ image_phone.product.description|truncatechars_html:80 }}
+                        </p>
+                        <div>
+                            {{ image_phone.product.price }} BYN
+                        </div>
+                        <div class="add-to-cart-btn">
+                            <a href="{% url 'product' image_phone.product.id %}">
+                            <button class="btn btn-success">
+                                Добавить в корзину
+                            </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider-buttons">
+        <button class="btn-prev-phones slider-buttons">&lt;</button>
+        <button class="btn-next-phones slider-buttons">&gt;</button>
+    </div>
+    <div class="section-tv">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center"> Телевизоры </h1>
+                </div>
+                <div class="wrapper-slider">
+                <div class="slider-container">
+                {% for image_tv in images_tv %}
+                <div class="col-lg-3 track-tv">
+                    <div class="item-tv">
+                        <div>
+                            <a href="{% url 'product' image_tv.product.id %}">
+                            <img src="static/media/{{ image_tv.image.url }}" class="img-fluid">
+                            </a>
+                        </div>
+                        {% if image_tv.product.discount %}
+                        <div class="discount-container">
+                            <span>{{ image_tv.product.discount }}%</span>
+                        </div>
+                        {% endif %}
+                        <hr size="4" style="margin-top: 0px;" noshade>
+                        <a class="text" href="{% url 'product' image_tv.product.id %}">
+                        <h4>{{ image_tv.product.product_name }}</h4>
+                        </a>
+                        <p>
+                            {{ image_tv.product.description|truncatechars_html:80 }}
+                        </p>
+                        <div>
+                            {{ image_tv.product.price }} BYN
+                        </div>
+                        <div class="add-to-cart-btn">
+                            <a href="{% url 'product' image_tv.product.id %}">
+                            <button class="btn btn-success">
+                                Добавить в корзину
+                            </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider-buttons">
+        <button class="btn-prev-tv slider-buttons">&lt;</button>
+        <button class="btn-next-tv slider-buttons">&gt;</button>
+    </div>
+
+    <div class="section-laptop">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center"> Ноутбуки </h1>
+                </div>
+                <div class="wrapper-slider">
+                <div class="slider-container">
+                {% for image_laptop in images_laptop %}
+                <div class="col-lg-3 track-laptops">
+                    <div class="item-laptops">
+                        <div>
+                            <a href="{% url 'product' image_laptop.product.id %}">
+                            <img src="static/media/{{ image_laptop.image.url }}" class="img-fluid">
+                            </a>
+                        </div>
+                        {% if image_laptop.product.discount %}
+                        <div class="discount-container">
+                            <span>{{ image_laptop.product.discount }}%</span>
+                        </div>
+                        {% endif %}
+                        <hr size="4" style="margin-top: 0px;" noshade>
+                        <a class="text" href="{% url 'product' image_laptop.product.id %}">
+                        <h4>{{ image_laptop.product.product_name }}</h4>
+                        </a>
+                        <p>
+                            {{ image_laptop.product.description|truncatechars_html:80 }}
+                        </p>
+                        <div>
+                            {{ image_laptop.product.price }} BYN
+                        </div>
+                        <div class="add-to-cart-btn">
+                            <a href="{% url 'product' image_laptop.product.id %}">
+                            <button class="btn btn-success">
+                                Добавить в корзину
+                            </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slider-buttons">
+        <button class="btn-prev-laptops slider-buttons">&lt;</button>
+        <button class="btn-next-laptops slider-buttons">&gt;</button>
+    </div>
+
+{% endblock %}

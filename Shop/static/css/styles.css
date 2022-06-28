@@ -1,0 +1,199 @@
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+.wrapper{
+    min-height: 100%;
+}
+
+.wrapper-content{
+    overflow: auto;
+    padding-bottom: 70px;
+}
+
+footer {
+    background-color: #212529;
+    position: relative;
+    height: 70px;
+    clear: both;
+    bottom: 0;
+    width: 100%;
+}
+
+.copyright{
+   margin-top: 20px;
+}
+
+.section-top {
+    margin-bottom: 20px
+}
+
+.item, .item-phones, .item-tv, .item-laptops {
+    height: 600px;
+    background-color: pink;
+    position: relative;
+    border: 2px solid black;
+    padding: 5px 0 5px 0;
+    text-align: center;
+}
+.discount-container{
+    position: absolute;
+    top: 10%;
+    background: green;
+    width: 30%;
+    color: white;
+    font-weight: 700;
+    padding: 3px;
+}
+.section-delivery{
+    margin-bottom: 50px;
+    margin-top: 50px;
+    height: 300px;
+    background: url(../media/img/background.jpg) center/1280px 300px no-repeat;
+    color: black;
+    text-align: center;
+}
+
+.section-tv, .section-laptop{
+    margin-top: 50px;
+}
+
+.prod-descr{
+    padding: 10px;
+}
+
+.basket-container{
+    position: relative;
+    width: 400px;
+    padding: 15px 10px;
+}
+
+.basket-items{
+position: absolute;
+    top: 61px;
+    width: 100%;
+    color: black;
+    background-color: #917b7bcc;
+    z-index: 10;
+    padding: 10px;
+}
+
+.form-error{
+    color: red;
+}
+
+.basket-button{
+    background-color:#6610F2;
+    border-color:black;
+    border-radius: 7px;
+    padding: 8px 14px;
+    color:white;
+    text-decoration: none;
+}
+
+.basket-button:hover {
+    background-color:#6610F2;
+    border-color:black;
+    border-radius: 7px;
+    padding: 8px 14px;
+    color:white;
+    text-decoration: none;
+}
+
+.text{
+    color: black;
+    text-decoration: none;
+}
+
+.text:hover{
+    color: black;
+    text-decoration: none;
+}
+
+.wrapper-slider {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.slider-container{
+    display: flex;
+    overflow: hidden;
+    background-color: pink;
+    height: 600px;
+}
+
+.track, .track-phones, .track-tv, .track-laptops {
+    transition-duration: .3s;
+}
+
+.slider-buttons{
+    text-align: center;
+    border-radius: 7px;
+    height: 35px;
+    margin-bottom: 50px;
+}
+
+.upButton{
+    margin-right: 80px;
+    margin-top: -45px;
+}
+
+.icon{
+    margin-top: -40px;
+    margin-left: 1550%;
+}
+
+.add-to-cart-btn{
+    margin-bottom: 10px;
+}
+
+.back-btn{
+    margin-top: 40px;
+    margin-left: 30px;
+}
+
+.form-buy{
+    width: 100px;
+}
+
+.nav-link.active{
+    background-color: #e2ebf1;
+}
+
+.tr-checkout{
+    background-color: rgb(0 0 0 / 13%);
+}
+
+.table-checkout{
+    margin-top: 50px;
+}
+
+a.delete-item{
+    color: #951515;
+    text-decoration: none;
+}
+
+.sidebar{
+    margin-left: 20px;
+    margin-top: 70px;
+    width: 250px;
+}
+
+a.sidebar-cat{
+    color: #154c83;
+    text-decoration: none;
+}
+
+ul.pagination{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 820px;
+}
+
+ul.pagination li {
+    display: inline;
+    margin-right: 5px;
+    padding: 3px;
+}

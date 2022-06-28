@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин электронной техники</title>
+    <link type="text/css" href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <style type="text/css">
+    .nav-link{
+        background-color: #b0cce7 !important;
+    }
+    .nav-link.active{
+        background-color: #e2ebf1 !important;
+    }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Магазин электронной техники</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <a class="basket-button" href="/catalog">Каталог</a>
+      </ul>
+        <ul class="navbar-nav me-2 mb-0 mb-md-0">
+          <li>
+            <div class="basket-container">
+                <a class="basket-button" href="/checkout">Корзина <span id="basket_total_amount">
+                    {% if products_total_amount %}
+                        ({{ products_total_amount }})
+                    {% else %}
+                        (0)
+                    {% endif %}
+                </span></a>
+                <div class="basket-items d-none">
+                  <ul>
+                      {% for product_in_basket in products_in_basket %}
+                        <li>{{ product_in_basket.product.product_name }}, {{ product_in_basket.quantity }} ед. по
+                            {{ product_in_basket.item_price }} BYN <a class="delete-item" href="" data-product_id="{{ product_in_basket.id }}">X</a></li>
+                      {% endfor %}
+                  </ul>
+                </div>
+            </div>
+          </li>
+        </ul>
+      <form class="d-flex" action="{% url 'shop:catalog' %}">
+        <input class="form-control me-2" type="search" placeholder="Поиск товара" aria-label="Search" name="search">
+        <button class="btn btn-outline-success" type="submit">Найти</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+<div class="wrapper">
+  {% block content %}
+  {% endblock content %}
+</div>
+
+  <footer class="border-top">
+    <div class="col-md-4 d-flex align-items-center">
+      <span class="text-muted copyright">© 2022 Магазин электронной техники, Inc</span>
+    </div>
+
+    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+      <li class="ms-3"><a class="text-muted" href="#"><img class="icon" src="http://127.0.0.1:8000/static/media/img/instagram.png" width="24" height="24"></img></a></li>
+      <li class="ms-3"><a class="text-muted" href="#"><img class="icon" src="http://127.0.0.1:8000/static/media/img/twitter.png" width="24" height="24"></img></a></li>
+      <li class="ms-3"><a class="text-muted" href="#"><img class="icon" src="http://127.0.0.1:8000/static/media/img/facebook.png" width="24" height="24"></img></a></li>
+    </ul>
+      <p class="float-end upButton"><a href="#">Наверх</a></p>
+  </footer>
+
+
+<script type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/slider_new.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/slider_tv.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/slider_phones.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/slider_laptops.js' %}"></script>
+
+</body>
+</html>
