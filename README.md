@@ -1,2 +1,2 @@
 # Online store
- Online store of electronics
+ Online store of electronics on Python Django
